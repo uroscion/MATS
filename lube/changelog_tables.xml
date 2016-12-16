@@ -1,0 +1,139 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Jon (generated)" id="1479104424125-3">
+        <createTable tableName="sources">
+            <column autoIncrement="true" name="id" remarks="primary key" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nickname" remarks="for other names of sources or when untitled" type="VARCHAR(255)"/>
+            <column name="title_eng_trans" type="VARCHAR(255)"/>
+            <column name="author_first" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author_middle" remarks="middle name or initial" type="VARCHAR(60)"/>
+            <column name="author_last" type="VARCHAR(50)"/>
+            <column name="inventory_num" type="VARCHAR(30)"/>
+            <column name="pub_year" type="INT"/>
+            <column name="link" remarks="url to source or description" type="VARCHAR(255)"/>
+            <column name="notes" remarks="for notes" type="VARCHAR(255)"/>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-6">
+        <createTable tableName="techniques">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="main_name" remarks="main name must be unique, can be in any language, the primary name the technique is known by today" type="VARCHAR(80)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-2">
+        <createTable tableName="instructionals">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="technique_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_instrs_techs" references="techniques(id)"/>
+            </column>
+            <column name="source_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_instrs_sources" references="sources(id)"/>
+            </column>
+            <column name="location_in_source" remarks="page or other location in written source, time location in video" type="VARCHAR(30)"/>
+            <column name="type" type="ENUM('print', 'video')"/>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-7">
+        <createTable tableName="topics">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" remarks="topic description" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-1">
+        <createTable tableName="instr_image_texts">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="instructional_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_instr_image_text" references="instructionals(id)"/>
+            </column>
+            <column name="image_file_loc" type="VARCHAR(255)"/>
+            <column name="text" type="TEXT"/>
+            <column name="text_trans" remarks="translation to english of text if applicable" type="TEXT" />
+            <column name="series_number" remarks="order number if part of a series" type="INT"/>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-4">
+        <createTable tableName="sources_topics">
+            <column name="source_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_st_source" references="sources(id)"/>
+            </column>
+            <column name="topic_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_st_topic" references="topics(id)"/>
+            </column>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-5">
+        <createTable tableName="techniques_topics">
+            <column name="technique_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_tt_technique" references="techniques(id)"/>
+            </column>
+            <column name="topic_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_tt_topic" references="topics(id)"/>
+            </column>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine innodb"/>
+        </modifySql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-8">
+        <addPrimaryKey columnNames="source_id, topic_id" constraintName="PRIMARY" tableName="sources_topics"/>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-9">
+        <addPrimaryKey columnNames="technique_id, topic_id" constraintName="PRIMARY" tableName="techniques_topics"/>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-10">
+        <addUniqueConstraint columnNames="main_name" constraintName="uc_techn_main_name" tableName="techniques"/>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-11">
+        <addUniqueConstraint columnNames="name" constraintName="uc_topic_name" tableName="topics"/>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-12">
+        <createIndex indexName="instructional_id" tableName="instr_image_texts">
+            <column name="instructional_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479104424125-13">
+        <createIndex indexName="inx_sources" tableName="sources_topics">
+            <column name="source_id"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

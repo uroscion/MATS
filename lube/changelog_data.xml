@@ -1,0 +1,755 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="disable-keys" author="x" runAlways="true">
+        <sql>SET FOREIGN_KEY_CHECKS=0;</sql>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479105699712-1">
+        <insert tableName="instr_image_texts">
+            <column name="instructional_id" valueNumeric="1"/>
+            <column name="image_file_loc" value="technique_images/1/img.jpg"/>
+            <column name="text" value="Lo Scolaro del primo Magistro sì digo che son certo d' zitar questo in tera o rompere suo brazo sinistro overo dislogare. E si lo zughadore che zogha cum lo Magistro primo levasse la man stancha de la spalla del Magistro per far altra defesa subito io che son in suo scambio lasso lo suo brazo dritto cum la mia man stancha, piglio la sua stancha gamba e la mia man dritta gli metto sotto la gola per mandarlo in terra in questo che vedeti depento lo terzo zogho."/>
+            <column name="text_trans" value="As the Scholar of the First Abrazare Remedy Master says, I am certain to put this man to the ground, either by breaking or dislocating his left arm. And if the Zugadore who fights with the First Abrazare Remedy Master takes his left hand off the shoulder of the Remedy Master in order to make a defense, then I will quickly let go of his right arm with my left hand and instead seize his left leg with my left hand, and grip his throat with my right hand in order to throw him to the ground, as you see depicted in the third play."/>
+            <column name="series_number"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479105699712-2">
+        <insert tableName="instructionals">
+            <column name="id" valueNumeric="1"/>
+            <column name="technique_id" valueNumeric="1"/>
+            <column name="source_id" valueNumeric="3"/>
+            <column name="location_in_source" value="Folio 6 verso, upper right "/>
+            <column name="type" value="print"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479105699712-3">
+        <insert tableName="sources">
+            <column name="id" valueNumeric="1"/>
+            <column name="title" value="untitled"/>
+            <column name="nickname" value="Walpurgis Fechtbuch"/>
+            <column name="title_eng_trans" value="untitled"/>
+            <column name="author_first" value="unknown"/>
+            <column name="author_middle"/>
+            <column name="author_last"/>
+            <column name="inventory_num" value="MS I.33"/>
+            <column name="pub_year" valueNumeric="1320"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Walpurgis_Fechtbuch_(MS_I.33)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="2"/>
+            <column name="title" value="Il Fiore di Battaglia"/>
+            <column name="nickname" value="The Morgan"/>
+            <column name="title_eng_trans" value="The Flower of Battle"/>
+            <column name="author_first" value="Fiore"/>
+            <column name="author_middle"/>
+            <column name="author_last" value="de'i Liberi"/>
+            <column name="inventory_num" value="B1.370.A MS M.0383"/>
+            <column name="pub_year" valueNumeric="1404"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Fior_di_Battaglia_(MS_M.383)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="3"/>
+            <column name="title" value="Il Fiore di Battaglia"/>
+            <column name="nickname" value="The Getty"/>
+            <column name="title_eng_trans" value="The Flower of Battle"/>
+            <column name="author_first" value="Fiore"/>
+            <column name="author_middle"/>
+            <column name="author_last" value="de'i Liberi"/>
+            <column name="inventory_num" value="MS Ludwig XV 13"/>
+            <column name="pub_year" valueNumeric="1404"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Fior_di_Battaglia_(MS_Ludwig_XV_13)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="4"/>
+            <column name="title" value="Anonimo Bolognese (Untitled)"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="Anonymous Bolognese (Untitled)"/>
+            <column name="author_first" value="anonymous"/>
+            <column name="author_middle"/>
+            <column name="author_last"/>
+            <column name="inventory_num" value="MSS Ravenna M-345/M-346"/>
+            <column name="pub_year" valueNumeric="1510"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Anonimo_Bolognese_(MSS_Ravenna_M-345/M-346)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="5"/>
+            <column name="title" value="L'Arte maestra"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="The Master Art"/>
+            <column name="author_first" value="Carlo"/>
+            <column name="author_middle" value="Giuseppe"/>
+            <column name="author_last" value="Colombani"/>
+            <column name="inventory_num"/>
+            <column name="pub_year" valueNumeric="1711"/>
+            <column name="link" value="http://wiktenauer.com/wiki/L%27Arte_maestra_(Carlo_Giuseppe_Colombani)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="6"/>
+            <column name="title" value="Die Blume des Kampfes"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="The Flower of Battle"/>
+            <column name="author_first" value="unknown"/>
+            <column name="author_middle"/>
+            <column name="author_last" value=""/>
+            <column name="inventory_num" value="Cod. 5278,&#10;MS B.26,&#10;Cod. 10799"/>
+            <column name="pub_year" valueNumeric="1420"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Die_Blume_des_Kampfes_(Cod.5278)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="8"/>
+            <column name="title" value="Ringer kunst: funf und Achtzig Stücke"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="The Art of Wrestling: Eighty-Five Devices"/>
+            <column name="author_first" value="Fabian"/>
+            <column name="author_middle"/>
+            <column name="author_last" value="von Auerswald"/>
+            <column name="inventory_num" value="2º Cod.MS.Philos.62"/>
+            <column name="pub_year" valueNumeric="1537"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Ringer_Kunst_(Fabian_von_Auerswald)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="9"/>
+            <column name="title" value="De Arte Gladiatoria Dimicandi"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="On the Art of Swordsmanship"/>
+            <column name="author_first" value="Philippo"/>
+            <column name="author_middle"/>
+            <column name="author_last" value="di Vadi Pisano"/>
+            <column name="inventory_num" value="MS Vitt.Em.1324"/>
+            <column name="pub_year" valueNumeric="1487"/>
+            <column name="link" value="http://wiktenauer.com/wiki/De_Arte_Gladiatoria_Dimicandi_(MS_Vitt.Em.1324)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="10"/>
+            <column name="title" value="Der Altenn Fechter anfengliche kunst"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="The Ancient Fencer's Beginning Art"/>
+            <column name="author_first" value="Christian"/>
+            <column name="author_middle"/>
+            <column name="author_last" value="Egenolff"/>
+            <column name="inventory_num"/>
+            <column name="pub_year" valueNumeric="1537"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Der_Altenn_Fechter_anfengliche_kunst_(Christian_Egenolff)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="11"/>
+            <column name="title" value="Vom Baumans Fechtbuch"/>
+            <column name="nickname" value="Codex Wallerstein"/>
+            <column name="title_eng_trans"/>
+            <column name="author_first" value="Paulus"/>
+            <column name="author_middle" value="Hector"/>
+            <column name="author_last" value="Mair"/>
+            <column name="inventory_num" value="Cod.I.6.4º.2"/>
+            <column name="pub_year" valueNumeric="1556"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Codex_Wallerstein_(Cod.I.6.4%C2%BA.2)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="12"/>
+            <column name="title" value="Über die Fechtkunst und den Ringkampf"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="On the Art of Fencing and Wrestling"/>
+            <column name="author_first" value="Hans"/>
+            <column name="author_middle"/>
+            <column name="author_last" value="Czynner"/>
+            <column name="inventory_num" value="MS 963"/>
+            <column name="pub_year" valueNumeric="1538"/>
+            <column name="link" value="http://wiktenauer.com/wiki/%C3%9Cber_die_Fechtkunst_und_den_Ringkampf_(MS_963)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="13"/>
+            <column name="title" value="Das Ander Theil Des Newen Kunstreichen Fechtbuches"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="The Second Part of This New Art-Rich Fencing Manual"/>
+            <column name="author_first" value="unknown"/>
+            <column name="author_middle"/>
+            <column name="author_last"/>
+            <column name="inventory_num" value="Codex Guelf 83.4 August 8º"/>
+            <column name="pub_year" valueNumeric="1591"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Das_Ander_Theil_Des_Newen_K%C5%AFnstreichen_Fechtb%C5%AFches_(Cod.Guelf.83.4_Aug.8%C2%BA)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="14"/>
+            <column name="title" value="Das Buch von Füßringen"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="The Book of Grappling on Foot"/>
+            <column name="author_first" value="anonymous"/>
+            <column name="author_middle"/>
+            <column name="author_last" value=""/>
+            <column name="inventory_num"/>
+            <column name="pub_year" valueNumeric="1490"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Das_Buch_von_F%C3%BC%C3%9Fringen"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="15"/>
+            <column name="title" value="untitled"/>
+            <column name="nickname" value="Gregor Erhart Fechtbuch"/>
+            <column name="title_eng_trans" value="untitled"/>
+            <column name="author_first" value="Gregor"/>
+            <column name="author_middle"/>
+            <column name="author_last" value="Erhart"/>
+            <column name="inventory_num" value="MS E.1939.65.354"/>
+            <column name="pub_year" valueNumeric="1533"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Gregor_Erhart_Fechtbuch_(MS_E.1939.65.354)"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="16"/>
+            <column name="title" value="Sciomachia et hoplomachia"/>
+            <column name="nickname"/>
+            <column name="title_eng_trans" value="Unarmed and Armed Combat"/>
+            <column name="author_first" value="Heinrich"/>
+            <column name="author_middle"/>
+            <column name="author_last" value=" von Gunterrodt"/>
+            <column name="inventory_num" value="MS Dresd.C.15"/>
+            <column name="pub_year" valueNumeric="1579"/>
+            <column name="link" value="http://digital.slub-dresden.de/werkansicht/dlf/95862/1/"/>
+            <column name="notes"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="17"/>
+            <column name="title" value="untitled"/>
+            <column name="nickname" value="Hans Medel Fechtbuch"/>
+            <column name="title_eng_trans" value="untitled"/>
+            <column name="author_first" value="Paulus"/>
+            <column name="author_middle" value="Hector"/>
+            <column name="author_last" value="Mair"/>
+            <column name="inventory_num" value="Cod.I.6.2º.5"/>
+            <column name="pub_year" valueNumeric="1566"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Hans_Medel_Fechtbuch_(Cod.I.6.2%C2%BA.5)"/>
+            <column name="notes" value="compilation of works by hans medel, Fechter &amp; Ringer by Maarten van Heemskerck, and Prints by Dirck Coornhert from sketches by Maarten van Heemskerck published earlier in 1552"/>
+        </insert>
+        <insert tableName="sources">
+            <column name="id" valueNumeric="18"/>
+            <column name="title" value="Das Landshuter Ringerbuch"/>
+            <column name="nickname" value=""/>
+            <column name="title_eng_trans" value="The Landshut Wrestling Manual"/>
+            <column name="author_first" value="unknown"/>
+            <column name="author_middle"/>
+            <column name="author_last" value=""/>
+            <column name="inventory_num"/>
+            <column name="pub_year" valueNumeric="1490"/>
+            <column name="link" value="http://wiktenauer.com/wiki/Das_Landshuter_Ringerbuch_(Hans_Wurm)"/>
+            <column name="notes" value="ascribed to printer Hans Wurm"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479105699712-4">
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="1"/>
+            <column name="topic_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="1"/>
+            <column name="topic_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="2"/>
+            <column name="topic_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="2"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="2"/>
+            <column name="topic_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="2"/>
+            <column name="topic_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="2"/>
+            <column name="topic_id" valueNumeric="27"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="13"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="3"/>
+            <column name="topic_id" valueNumeric="27"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="4"/>
+            <column name="topic_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="4"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="5"/>
+            <column name="topic_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="5"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="5"/>
+            <column name="topic_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="13"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="6"/>
+            <column name="topic_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="8"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="8"/>
+            <column name="topic_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="9"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="9"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="9"/>
+            <column name="topic_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="9"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="9"/>
+            <column name="topic_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="9"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="9"/>
+            <column name="topic_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="10"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="10"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="10"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="10"/>
+            <column name="topic_id" valueNumeric="9"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="10"/>
+            <column name="topic_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="10"/>
+            <column name="topic_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="23"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="26"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="11"/>
+            <column name="topic_id" valueNumeric="27"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="12"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="12"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="12"/>
+            <column name="topic_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="12"/>
+            <column name="topic_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="12"/>
+            <column name="topic_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="13"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="13"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="13"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="13"/>
+            <column name="topic_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="13"/>
+            <column name="topic_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="13"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="14"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="14"/>
+            <column name="topic_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="15"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="15"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="15"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="15"/>
+            <column name="topic_id" valueNumeric="9"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="16"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="16"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="16"/>
+            <column name="topic_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="16"/>
+            <column name="topic_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="16"/>
+            <column name="topic_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="16"/>
+            <column name="topic_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="16"/>
+            <column name="topic_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="17"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="17"/>
+            <column name="topic_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="17"/>
+            <column name="topic_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="sources_topics">
+            <column name="source_id" valueNumeric="18"/>
+            <column name="topic_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479105699712-5">
+        <insert tableName="techniques">
+            <column name="id" valueNumeric="1"/>
+            <column name="main_name" value="Underhook Armbar"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Jon (generated)" id="1479105699712-6">
+        <insert tableName="topics">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Longsword in One Hand"/>
+            <column name="description" value="Longsword held in one hand without a secondary weapon."/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Wrestling"/>
+            <column name="description" value=""/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Grounded Grappling"/>
+            <column name="description" value=""/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Longsword"/>
+            <column name="description" value="in 2 hands, standard longsword"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Wrestling in the Pit"/>
+            <column name="description" value="ritual combat in the pit, where a man fights a woman.  The man stands in the pit while the woman uses a stone filled sack with one hand."/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="6"/>
+            <column name="name" value="Knife defense"/>
+            <column name="description" value="unarmed defense against a dagger or knife"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="7"/>
+            <column name="name" value="Dagger"/>
+            <column name="description" value="both combatants armed with a dagger"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="8"/>
+            <column name="name" value="Dussack"/>
+            <column name="description" value="practice wooden curved blade taught in later periods analogous to messer"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="9"/>
+            <column name="name" value="Messer"/>
+            <column name="description" value="curved German knife"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="10"/>
+            <column name="name" value="Sword and Buckler"/>
+            <column name="description" value="medieval combat with sword and buckler"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="11"/>
+            <column name="name" value="Side Sword"/>
+            <column name="description" value="Later combat with sword in one hand"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="12"/>
+            <column name="name" value="Rapier"/>
+            <column name="description" value=""/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="13"/>
+            <column name="name" value="Spear"/>
+            <column name="description" value=""/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="14"/>
+            <column name="name" value="Mounted Fencing"/>
+            <column name="description" value="sword use from horseback"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="15"/>
+            <column name="name" value="Mounted Lance"/>
+            <column name="description" value="spear or lance from horseback"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="16"/>
+            <column name="name" value="Baton"/>
+            <column name="description" value="small wooden weapon"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="17"/>
+            <column name="name" value="Staff"/>
+            <column name="description" value="the short staff, wooden pole of 7-9 feet"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="18"/>
+            <column name="name" value="Pike"/>
+            <column name="description" value=""/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="19"/>
+            <column name="name" value="Polearms"/>
+            <column name="description" value="a generic category for poleaxe, billhook, etc"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="20"/>
+            <column name="name" value="Armored combat"/>
+            <column name="description" value="combat in armor"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="21"/>
+            <column name="name" value="Great Sword"/>
+            <column name="description" value="two handed great sword"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="22"/>
+            <column name="name" value="Long Shield"/>
+            <column name="description" value="use of the large shield"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="23"/>
+            <column name="name" value="Scythe"/>
+            <column name="description" value="the peasant tool or modified weapon"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="24"/>
+            <column name="name" value="Flail"/>
+            <column name="description" value=""/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="25"/>
+            <column name="name" value="Peasant Staff"/>
+            <column name="description" value="the cudgel or large club"/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="26"/>
+            <column name="name" value="Sickle"/>
+            <column name="description" value=""/>
+        </insert>
+        <insert tableName="topics">
+            <column name="id" valueNumeric="27"/>
+            <column name="name" value="Foot vs Mount"/>
+            <column name="description" value="combat against mounted foes while one foot, with a variety of weapons"/>
+        </insert>
+    </changeSet>
+    <changeSet id="enable-keys" author="x" runAlways="true">
+        <sql>SET FOREIGN_KEY_CHECKS=1;</sql>
+    </changeSet>
+</databaseChangeLog>
